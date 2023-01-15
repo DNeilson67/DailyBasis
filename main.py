@@ -23,15 +23,15 @@ from inputs import minusbutton
 
 #initialize the game
 pygame.init()
+screen = pygame.display.set_mode((Settings().screen_width,Settings().screen_height))
+pygame.display.set_caption("Daily Basis")
+pygame.time.Clock().tick(60)
 
+#BGM Music
 music = mixer.music.load("sound/BGM.wav")
 mixer.music.play(-1)
 mixer.music.set_volume(0.3)
 
-screen = pygame.display.set_mode((Settings().screen_width,Settings().screen_height))
-pygame.display.set_caption("Daily Basis")
-pygame.time.Clock().tick(60)
- 
 #Font General Settings
 font1 = pygame.font.SysFont("comicsansms", 60)
 font2 = pygame.font.SysFont("comicsansms", 40)
@@ -103,6 +103,7 @@ def mainmenu():
                     break
 #The Main Game
 def rungame():
+    mixer.music.set_volume(0.1)
     time_clock = pygame.time.get_ticks()
     while True:
     #Updating screen and control everytime

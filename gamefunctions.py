@@ -92,8 +92,10 @@ def checkeventsmainmenuscreen(quitpos, startpos, setpos):
                 pygame.quit()
                 exit()
             elif startpos_clicked:
+                mixer.Sound.play(mixer.Sound("sound/play.wav"))
                 mainmenu = False
             elif setpos_clicked:
+                mixer.Sound.play(mixer.Sound("sound/confirm.wav"))
                 settings = True
 
 #Update the settings screen every event happens
@@ -131,17 +133,25 @@ def checkeventssettingsscreen(quitsetpos, startsetpos, onmusicpos, offmusicpos,p
 
             if onmusicpos_clicked:
                 if music == True:
+                    mixer.Sound.play(mixer.Sound("sound/cancel.wav"))
                     break
                 else:
+                    mixer.Sound.play(mixer.Sound("sound/confirm.wav"))
                     mixer.music.unpause()
                     music = True
             elif offmusicpos_clicked:
-                mixer.music.pause()
-                music = False
+                if music == False:
+                    mixer.Sound.play(mixer.Sound("sound/cancel.wav"))
+                else:
+                    mixer.Sound.play(mixer.Sound("sound/confirm.wav"))
+                    mixer.music.pause()
+                    music = False
             elif startsetpos_clicked:
+                mixer.Sound.play(mixer.Sound("sound/play.wav"))
                 mainmenu = False
                 back = True
             elif quitsetpos_clicked:
+                mixer.Sound.play(mixer.Sound("sound/cancel.wav"))
                 back = True
                 goalgolds = 5
                 p1c = 10
@@ -149,24 +159,34 @@ def checkeventssettingsscreen(quitsetpos, startsetpos, onmusicpos, offmusicpos,p
                 p1g = 0
                 p2g = 0
             elif plusgoalgoldspos_clicked:
+                mixer.Sound.play(mixer.Sound("sound/confirm.wav"))
                 goalgolds += 1
             elif minusgoalgoldspos_clicked:
+                mixer.Sound.play(mixer.Sound("sound/cancel.wav"))
                 goalgolds -= 1
             elif plusp1coinpos_clicked:
+                mixer.Sound.play(mixer.Sound("sound/confirm.wav"))
                 p1c += 5
             elif plusp1goldpos_clicked:
+                mixer.Sound.play(mixer.Sound("sound/confirm.wav"))
                 p1g += 1
             elif plusp2coinpos_clicked:
+                mixer.Sound.play(mixer.Sound("sound/confirm.wav"))
                 p2c += 5
             elif plusp2goldpos_clicked:
+                mixer.Sound.play(mixer.Sound("sound/confirm.wav"))
                 p2g += 1
             elif minusp1coinpos_clicked:
+                mixer.Sound.play(mixer.Sound("sound/cancel.wav"))
                 p1c -= 5
             elif minusp1goldpos_clicked:
+                mixer.Sound.play(mixer.Sound("sound/cancel.wav"))
                 p1g -= 1
             elif minusp2coinpos_clicked:
+                mixer.Sound.play(mixer.Sound("sound/cancel.wav"))
                 p2c -= 5
             elif minusp2goldpos_clicked:
+                mixer.Sound.play(mixer.Sound("sound/cancel.wav"))
                 p2g -= 1
 
             #No more than 100 coins and golds, must not be a negative number, and not exceeding goal golds
