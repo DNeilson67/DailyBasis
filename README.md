@@ -152,17 +152,6 @@ This project was developed as a **Final Project** for the **Algorithm and Progra
 - **Default Starting Gold**: 0 per player
 - **Default Goal Gold**: 5
 
-## 🚀 Future Enhancements
-
-Potential features for future versions:
-- Single-player mode with AI opponent
-- Online multiplayer support
-- More event card types
-- Achievement system
-- Power-up items
-- Custom board designs
-- Save/Load game functionality
-
 ## 🤝 Contributing
 
 This is an academic project, but suggestions and feedback are welcome! Feel free to open an issue or submit a pull request.
